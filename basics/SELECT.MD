@@ -17,3 +17,16 @@ WHERE last_name = 'Lenny';
 ```
 **N/B: Do not use ""**
 
+## SQL operators:
+Whe have the usual conditional and logical operators: ` = , <, AND, OR, NOT, `
+
+## SELECT DISTINCT statement:
+It selects unique rows from a database table.
+```
+SELECT DISTINCT first_name FROM <table name>;
+```
+## DISTINCT with COUNT:
+To get the number of distinct rows, we can use `COUNT()` function with `DISTINCT`
+```
+SELECT COUNT(DISTINCT first_name) FROM <table name>;
+```
