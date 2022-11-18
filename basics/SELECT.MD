@@ -30,3 +30,18 @@ To get the number of distinct rows, we can use `COUNT()` function with `DISTINCT
 ```
 SELECT COUNT(DISTINCT first_name) FROM <table name>;
 ```
+
+## SELECT AS alias:
+The `AS` keyword is used to give a column a temporary name that can be used to identify the table later in the result set.
+
+```
+SELECT first_name AS fn FROM <table name>
+```
+One can also use aliases with more than one column:
+
+```
+SELECT customer_id AS cid, first_name AS name
+FROM <table name>;
+```
+## SELECT AS with an expression:
+
