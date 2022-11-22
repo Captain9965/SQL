@@ -44,4 +44,15 @@ SELECT customer_id AS cid, first_name AS name
 FROM <table name>;
 ```
 ## SELECT AS with an expression:
+We can combine data from multiple columns and represent data in a single column using the `CONCAT()` function.
 
+```
+SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM < table name>
+
+```
+
+## SELECT TOP:
+
+`TOP` is used to select a fixed number of rows from a database. For example:
+```
+SELECT TOP 2 * FROM <table name> 
