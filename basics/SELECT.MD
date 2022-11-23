@@ -56,3 +56,51 @@ SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM < table name>
 `TOP` is used to select a fixed number of rows from a database. For example:
 ```
 SELECT TOP 2 * FROM <table name> 
+```
+The `TOP` clause is not supported by all RDBMS:
+- `TOP` is used by `SQL server, MS Access`
+- `LIMIT` is used by `MySQL, PostgreSQL, SQLite`
+- 'FETCH FIRST' is used by `Oracle`
+
+## SELECT LIMIT:
+`TOP` for the DBMS listed above.
+```
+SELECT first_name, last_name FROM <table name> LIMIT 4
+```
+
+## SELECT with OFFSET clause:
+
+`OFFSET` clause is used to specify the starting rows from where to select rows. 
+```
+SELECT first_name, last_name FROM <table name>  LIMIT 2 OFFSET 3;
+```
+The first 3 rows are excluded
+
+## FETCH FIRST clause:
+Used only in the Oracle RDBMS 
+```
+SELECT * FROM <table name> FETCH FIRST 5 ROWS ONLY;
+
+```
+## PERCENT clause with TOP:
+Used to select  the first `n` percent of total rows.
+```
+SELECT TOP 40 PERCENT FROM <table name>;
+
+```
+## WITH TIES clause with TOP:
+Used to select more rows if there are similar values to the last row:
+```
+SELECT TOP 3 WITH TIES first_name, country
+FROM Customers
+ORDER BY country DESC;
+```
+This first sorts by country in descending order, then selects the first 3 rows. Rows containing similar `country` field values to the last row are also selected. 
+**Note that `ORDER BY` must always be used with the `WITH TIES` clause**
+
+## SQL IN operator:
+Used in conjuction with the `WHERE` clause to match values in a list. 
+```
+SELECT first_name, last_name FROM <table name> WHERE first_name IN ('Lenny', 'Orengo');
+
+```
