@@ -9,4 +9,5 @@ In non-relational, data is stored in key-value pairs. The most common ones used 
 
 In relational, data is stored in tabular format. In RDBMS, 2 or more tables may be related to each other, hence the name "relational" 
 
-Commonly used RDBMS: MySQL, PostgreSQL, MSSQL, Oracle..
+Commonly used RDBMS: MySQL, PostgreSQL, MSSQL, Oracle
+In this tutorial, we are going to learn SQL with PostgreSQL
