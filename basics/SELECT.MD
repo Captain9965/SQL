@@ -104,3 +104,31 @@ Used in conjuction with the `WHERE` clause to match values in a list.
 SELECT first_name, last_name FROM <table name> WHERE first_name IN ('Lenny', 'Orengo');
 
 ```
+
+## SQL IN in columns:
+
+The `IN` operator can also be used to select rows in which certain values exist in a given field.
+
+```
+SELECT first_name, country FROM <table name> WHERE 'usa' IN (country);
+```
+
+## SQL NOT IN operator:
+`NOT IN` operator is used to exclude values that do not match the values given in the list. 
+
+```
+SELECT first_name country FROM < table name> WHERE country NOT IN ('usa', 'france');
+
+```
+
+
+
+*N/B: The `IN` operator ignores duplicate values in the list* 
+
+## SQL IN with subqueries:
+
+Example:
+```
+SELECT name FROM product_product WHERE product_id IN (SELECT id FROM order_orderitem);
+
+```
