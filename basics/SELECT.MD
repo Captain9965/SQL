@@ -132,3 +132,22 @@ Example:
 SELECT name FROM product_product WHERE product_id IN (SELECT id FROM order_orderitem);
 
 ```
+## SQL BETWEEN operator:
+This is used with the `WHERE` clause to match values in a range. For example:
+```
+SELECT * FROM order_orderitem WHERE product_amount BETWEEN 3000 AND 5000;
+```
+## SQL NOT BETWEEN operator:
+This excludes values in a given range:
+```
+SELECT * FROM order_orderitem WHERE product_amount NOT BETWEEN 3000 AND 5000;
+```
+
+## SQL BETWEEN operator with Texts:
+It also works with text:
+```
+SELECT * FROM product_product WHERE name BETWEEN 'a' AND 'c';
+```
+
+
+
