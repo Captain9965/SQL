@@ -148,6 +148,40 @@ It also works with text:
 ```
 SELECT * FROM product_product WHERE name BETWEEN 'a' AND 'c';
 ```
+*Note that we can use the ~ to include all the words starting with a 'c'*
+ie..
+```
+SELECT * FROM product_product WHERE name BETWEEN 'a' AND 'c~';
+```
+
+## SQL IS NULL:
+This is a condition used to select a row/rows if the specified field is `NULL`..
+```
+SELECT * FROM order_order WHERE paid_amount IS NULL;
+```
+
+*Note that only empty values are NULL, spaces, '' and 0 are not NULL*
+
+## SQL IS NOT NULL:
+Selects rows whose specified fields are not `NULL`
+
+## SQL IS NULL with COUNT() function:
+Used to count the number of rows with an empty field.
+```
+SELECT COUNT(*) FROM order_order WHERE paid_amount IS NULLL;
+```
+## SQL MIN() and MAX() functions:
+These return the minumum and maximum values in a column respectively.
+
+```
+SELECT MAX(price) FROM product_product;
+```
+They can also be used with aliases which provide custom names for the columns:
+```
+SELECT MAX(price) AS max_price FROM product_product;
+```
+
+
 
 
 
