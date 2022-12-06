@@ -181,6 +181,30 @@ They can also be used with aliases which provide custom names for the columns:
 SELECT MAX(price) AS max_price FROM product_product;
 ```
 
+They can also be used on *strings*:
+```
+SELECT MAX(product_name) FROM <table name>;
+```
+This will return the max value based on dictionary order
+
+Select row containing `MIN/MAX` value:
+```
+SELECT * FROM product_product WHERE age = (SELECT MIN(price) FROM product_product);
+```
+
+### SELECT with COUNT() function:
+
+The function `COUNT()` returns the number of rows in a result set:
+```
+SELECT COUNT(*) FROM <table name>;
+```
+We can also use `COUNT()` with aliases:
+
+```
+SELECT COUNT(*) AS number FROM <table name>;
+```
+
+
 
 
 
