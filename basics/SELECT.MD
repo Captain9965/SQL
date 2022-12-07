@@ -203,9 +203,25 @@ We can also use `COUNT()` with aliases:
 ```
 SELECT COUNT(*) AS number FROM <table name>;
 ```
+## COUNT() with WHERE:
+```
+ SELECT COUNT(product_id) FROM order_orderitem WHERE order_id IN (SELECT id FROM order_order WHERE paid = true);  
+ ```
 
+ This returns the number of product IDs that have been ordered and paid for.
 
+ ## COUNT() with DISTINCT:
+ Used to count the number of unique rows:
+ ```
+ SELECT COUNT(DISTINCT first_name) FROM order_order;
+ ```
+ Used to get the number of distinct first names from the table. 
 
+ ## COUNT() with GROUP BY:
+`COUNT` can be used with `GROUP BY` to count the number of rows with similar values.
 
+```
+SELECT product_id, COUNT(*) AS number_of_orders FROM order_orderitem GROUP BY product_id;
+```
 
 
