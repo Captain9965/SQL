@@ -224,4 +224,9 @@ SELECT COUNT(*) AS number FROM <table name>;
 SELECT product_id, COUNT(*) AS number_of_orders FROM order_orderitem GROUP BY product_id;
 ```
 
+## COUNT() with HAVING clause:
+Example:
+```
+SELECT COUNT(product_id), name FROM order_orderitem GROUP BY name  HAVING COUNT(product_id) > 1;
+
 
