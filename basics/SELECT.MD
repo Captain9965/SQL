@@ -228,5 +228,21 @@ SELECT product_id, COUNT(*) AS number_of_orders FROM order_orderitem GROUP BY pr
 Example:
 ```
 SELECT COUNT(product_id), name FROM order_orderitem GROUP BY name  HAVING COUNT(product_id) > 1;
+```
 
 
+## COUNT() with NULL values:
+`SELECT COUNT(*)` selects returns the count of all records including null values. On the other hand, `SELECT COUNT(attribute)` returns the count of records containing non-null valuses of the specified column.
+
+## SELECT SUM() AND AVG():
+Used to return the sum and average values of the specified numeric columns.
+
+```
+SELECT SUM(price) AS total_price FROM order_orderitem;
+```
+Select AVG():
+
+```
+SELECT AVG(amount_due) AS avg_sales FROM order_order;
+
+```
