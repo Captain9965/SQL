@@ -246,3 +246,21 @@ Select AVG():
 SELECT AVG(amount_due) AS avg_sales FROM order_order;
 
 ```
+## SQL ORDER BY clause:
+Used to sort the result either in descending or ascending order. Use ASC for ascending (this is the default hence one needs not to explicitly state) and DESC for descending order.
+```
+SELECT * FROM order_order ORDER BY amount_due DESC;
+```
+
+### ORDER BY with multiple columns:
+This sorts first by the first argument then if it repeats more than once, it sorts according to the second argument.
+```
+SELECT * FROM order_order ORDER BY amount_due, first_name DESC;
+
+```
+### ORDER BY with WHERE: 
+Note that the WHERE clause must appear before the ORDER BY clause. 
+```
+SELECT * FROM order_order WHERE NOT first_name = 'John' ORDER BY amount_due DESC;
+
+```
