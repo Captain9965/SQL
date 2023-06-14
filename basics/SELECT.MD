@@ -264,3 +264,37 @@ Note that the WHERE clause must appear before the ORDER BY clause.
 SELECT * FROM order_order WHERE NOT first_name = 'John' ORDER BY amount_due DESC;
 
 ```
+## GROUP BY CLAUSE:
+Used to group rows by one or more columns
+```
+SELECT COUNT(first_name), paid_amount FROM order_order GROUP BY paid_amount;
+```
+syntax:
+```
+SELECT column1, column2, ...
+FROM table
+GROUP BY columnA, columnB, ...;
+```
+
+The `GROUP BY` clause is used in conjunction with aggregate function such as `AVG(), SUM(), MIN(), MAX(), COUNT()`..
+
+## GROUP BY with JOIN:
+```
+-- join the Customers and Orders tables
+-- select customer_id and first_name from Customers table
+-- also select the count of order ids from Orders table
+-- group the result by customer_id
+
+SELECT Customers.customer_id, Customers.first_name,
+COUNT(Orders.order_id) AS order_count
+FROM Customers
+LEFT JOIN Orders
+ON Customers.customer_id = Orders.customer_id
+GROUP BY Customers.customer_id;
+```
+
+## GROUP BY with HAVING clause:
+Used to filter the result set based on an aggregate function: 
+```
+ SELECT COUNT(last_name) FROM order_order HAVING COUNT(last_name) > 1;
+```
